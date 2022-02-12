@@ -55,6 +55,11 @@
             </table>
         </div>
     </div>
+
+        <div class="card-footer">
+            {!! $inspectors->links() !!}
+        </div>
+
 @stop
 
 @section('css')

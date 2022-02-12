@@ -19,7 +19,10 @@ class InspectorController extends Controller
 
     function index()
     {
-        $inspectors = $this->repository->all();
+        $inspectors = Inspector::paginate(1);
+
+        // $inspectors = $this->repository->all();
+
         return view('admin.pages.inspectors.index', [
             'inspectors' => $inspectors,
         ]);
