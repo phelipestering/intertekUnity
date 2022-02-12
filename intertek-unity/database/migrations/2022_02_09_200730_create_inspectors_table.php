@@ -21,7 +21,7 @@ class CreateInspectorsTable extends Migration
             $table->bigIncrements('id');
             $table->string('nome', 100);
             $table->string('sobreNome', 100);
-            $table->date('DataNascimento');
+            
 
             $table->string('emailIntertek', 100)->unique();
             $table->string('disciplina', 100);

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\InspectorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+Route::get('admin/inspectors',
+            [InspectorController::class, 'index'])
+            ->name('index');
 
 Route::get('/', function () {
     return view('welcome');
