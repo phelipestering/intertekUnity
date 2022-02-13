@@ -56,4 +56,18 @@ class InspectorController extends Controller
             'inspector' => $inspector,
         ]);
     }
+
+    public function deleteInspetor($name)
+    {
+        $inspector = $this->repository->where('nome', $name)->first();
+
+        if(!$name)
+            return redirect()->back();
+
+        $inspector ->delete();
+
+        return redirect()->route('inspectors.index');
+
+
+    }
 }

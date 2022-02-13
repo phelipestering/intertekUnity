@@ -31,6 +31,8 @@ Route::POST('admin/inspectors/',
 
 Route::get('admin/inspectors/{nome}',[InspectorController::class, 'show'])->name('inspectors.show');
 
+Route::delete('admin/inspectors/{nome}',[InspectorController::class, 'deleteInspetor'])->name('inspectors.deleteInspetor');
+
 
 
 Route::get('/', function () {

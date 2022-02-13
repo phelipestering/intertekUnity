@@ -56,6 +56,15 @@
 
             </ul>
 
+            <form action="{{ route('inspectors.deleteInspetor', $inspector->nome) }}" method="POST">
+            @csrf
+            @method('DELETE')
+                <button type="submit" class="btn btn-danger"> DELETAR INSPETOR {{ $inspector->nome}}
+
+            </button>
+
+            </form>
+
         </div>
 
 
