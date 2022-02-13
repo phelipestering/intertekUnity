@@ -20,17 +20,17 @@ class CreateInspectorsTable extends Migration
 
             $table->bigIncrements('id');
             $table->string('nome', 100);
-            $table->string('sobreNome', 100);
-            
+           
+
 
             $table->string('emailIntertek', 100)->unique();
             $table->string('disciplina', 100);
             $table->string('qualificacoes', 100);
 
-            $table->string('rua', 100);
+            $table->string('rua', 100)->nullable();
 
             $table->string('bairro', 100);
-            $table->string('cpf', 20)->unique();
+            $table->string('cpf', 20)->unique()->nullable();
             $table->string('telefone1', 20)->unique();
             $table->string('telefone2', 20)->nullable();
             $table->string('cidade', 20);

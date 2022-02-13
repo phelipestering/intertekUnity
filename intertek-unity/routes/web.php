@@ -15,9 +15,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+// ROTA INSPETORES
+
 Route::get('admin/inspectors',
             [InspectorController::class, 'index'])
-            ->name('index');
+            ->name('inspectors.index');
+
+Route::get('admin/inspectors/create',
+            [InspectorController::class, 'create'])
+            ->name('inspectors.create');
+
+Route::POST('admin/inspectors/',
+            [InspectorController::class, 'store'])
+            ->name('inspectors.store');
 
 Route::get('/', function () {
     return view('welcome');

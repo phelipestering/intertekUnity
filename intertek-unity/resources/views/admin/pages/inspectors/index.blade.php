@@ -3,7 +3,7 @@
 @section('title', 'Unity - Inspetores')
 
 @section('content_header')
-    <h1>Inspetores</h1>
+<h1>Inspetores <a href="{{ route('inspectors.create') }}" class="btn btn-dark">CADASTRAR INSPETOR</a></h1>
 @stop
 
 @section('content')

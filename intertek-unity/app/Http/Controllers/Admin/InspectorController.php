@@ -17,14 +17,30 @@ class InspectorController extends Controller
         $this->repository = $inspector;
     }
 
-    function index()
+    public function index()
     {
-        $inspectors = Inspector::paginate(1);
+        $inspectors = Inspector::paginate(2);
 
         // $inspectors = $this->repository->all();
 
         return view('admin.pages.inspectors.index', [
             'inspectors' => $inspectors,
         ]);
+    }
+
+    public function create()
+    {
+
+        return view('admin.pages.inspectors.create');
+    }
+
+    public function store(Request $request)
+    {
+
+        $data = $request->all();
+        // $data['url'] = Str::kebab($request->name);
+        $this->repository->create($data);
+
+        return redirect()->route('inspectors.index');
     }
 }
