@@ -29,6 +29,10 @@ Route::POST('admin/inspectors/',
             [InspectorController::class, 'store'])
             ->name('inspectors.store');
 
+Route::get('admin/inspectors/{nome}',[InspectorController::class, 'show'])->name('inspectors.show');
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });

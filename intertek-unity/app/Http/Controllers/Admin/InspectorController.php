@@ -43,4 +43,17 @@ class InspectorController extends Controller
 
         return redirect()->route('inspectors.index');
     }
+
+    public function show($name)
+    {
+        $inspector = $this->repository->where('nome', $name)->first();
+
+        if(!$name)
+
+        return redirect()->back();
+
+        return view('admin.pages.inspectors.show',[
+            'inspector' => $inspector,
+        ]);
+    }
 }

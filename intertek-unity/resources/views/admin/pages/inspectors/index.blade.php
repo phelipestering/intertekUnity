@@ -46,7 +46,7 @@
                             {{ $inspector -> qualificacoes }}
                         </td>
                         <td style="width:30px">
-                            <a href="" class="btn btn-warning">VER DADOS</a>
+                            <a href="{{ route ('inspectors.show', $inspector->nome) }}" class="btn btn-warning">VER DADOS</a>
                         </td>
                     </tr>
 
