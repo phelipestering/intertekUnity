@@ -70,4 +70,16 @@ class InspectorController extends Controller
 
 
     }
+
+    public function search(Request $request)
+    {
+
+        $filters = $request->except('_token');
+
+        $inspectors = $this->repository->search($request->filter);
+
+        return view('admin.pages.inspectors.index', compact('inspectors','filters'));
+
+    }
+
 }

@@ -11,7 +11,11 @@
 
     <div class="card">
         <div class="card-header">
-            botao de Filtros
+            <form action="{{ route('inspectors.search') }}" method="post" class="form form-inline">
+                @csrf
+                <input type="text" name="filter" class="form-control" value="{{ $filters['filter'] ?? ''}}">
+                <button type="submit" class="btn btn-dark"><i class="fas fa-filter"></i> Filtrar</button>
+            </form>
         </div>
 
         <div class="card-body">
@@ -57,7 +61,16 @@
     </div>
 
         <div class="card-footer">
+            @if (isset($filters))
+
+            {!! $inspectors->appends($filters)->links() !!}
+
+        @else
+
             {!! $inspectors->links() !!}
+
+        @endif
+
         </div>
 
 @stop

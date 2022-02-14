@@ -33,6 +33,8 @@ Route::get('admin/inspectors/{nome}',[InspectorController::class, 'show'])->name
 
 Route::delete('admin/inspectors/{nome}',[InspectorController::class, 'deleteInspetor'])->name('inspectors.deleteInspetor');
 
+Route::any('admin/inspectors/search',[InspectorController::class, 'search'])->name('inspectors.search');
+
 
 
 Route::get('/', function () {

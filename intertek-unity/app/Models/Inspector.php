@@ -26,4 +26,17 @@ class Inspector extends Model
         'UF'
 
     ];
+
+    public function search($filter = null)
+    {
+        $results = $this->where('nome', 'LIKE', "%${filter}%")
+                        ->orWhere('UF', 'LIKE', "%{$filter}%")
+                        ->orWhere('cidade', 'LIKE', "%{$filter}%")
+                        ->orWhere('disciplina', 'LIKE', "%{$filter}%")
+                        ->orWhere('qualificacoes', 'LIKE', "%{$filter}%")
+                        ->paginate();
+
+                        return $results;
+    }
+
 }

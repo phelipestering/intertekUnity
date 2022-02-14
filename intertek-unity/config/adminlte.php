@@ -229,6 +229,7 @@ return [
         [
             'type'         => 'navbar-search',
             'text'         => 'search',
+            // 
             'topnav_right' => true,
         ],
         [

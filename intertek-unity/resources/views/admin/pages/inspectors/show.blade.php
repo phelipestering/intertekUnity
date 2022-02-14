@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', "Unity - Dados Inspetor {{ $inspector->name }}")
+@section('title', "Unity - Dados Inspetor {{ $inspector->nome }}")
 
 @section('content_header')
 <h1>Dados Inspetor <b>{{ $inspector->nome }}</b></h1>
@@ -8,6 +8,8 @@
 
 @section('content')
         <div class="card-body">
+
+            
 
             <ul>
                 <li>
