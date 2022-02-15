@@ -4,6 +4,13 @@
 
 @section('content_header')
 <h1>Inspetores <a href="{{ route('inspectors.create') }}" class="btn btn-dark">CADASTRAR INSPETOR</a></h1>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('inspectors.index') }}" class="href">Dashboard</a></li>
+        
+    </ol>
+
+
 @stop
 
 @section('content')

@@ -35,7 +35,9 @@ Route::delete('admin/inspectors/{nome}',[InspectorController::class, 'deleteInsp
 
 Route::any('admin/inspectors/search',[InspectorController::class, 'search'])->name('inspectors.search');
 
+// BREADCRUMB
 
+Route::get('admin',[InspectorController::class, 'index'])->name(admin.index');
 
 Route::get('/', function () {
     return view('welcome');
