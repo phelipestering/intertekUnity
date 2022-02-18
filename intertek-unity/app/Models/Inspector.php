@@ -9,6 +9,10 @@ class Inspector extends Model
 {
     use HasFactory;
 
+    
+
+    protected $table= "inspectors";
+
     protected $fillable = [
 
         'name',
