@@ -17,28 +17,23 @@ use Illuminate\Support\Facades\Route;
 
 // ROTA INSPETORES
 
-Route::get('admin/inspectors',
-            [InspectorController::class, 'index'])
-            ->name('inspectors.index');
+Route::get('admin/inspectors',[InspectorController::class, 'index'])->name('inspectors.index');
 
-Route::get('admin/inspectors/create',
-            [InspectorController::class, 'create'])
-            ->name('inspectors.create');
+Route::get('admin/inspectors/create',[InspectorController::class, 'create'])->name('inspectors.create');
 
-Route::POST('admin/inspectors/',
-            [InspectorController::class, 'store'])
-            ->name('inspectors.store');
+Route::POST('admin/inspectors/', [InspectorController::class, 'store'])->name('inspectors.store');
 
-Route::get('admin/inspectors/{nome}',[InspectorController::class, 'show'])->name('inspectors.show');
+Route::get('admin/inspectors/{name}',[InspectorController::class, 'show'])->name('inspectors.show');
 
-Route::delete('admin/inspectors/{nome}',[InspectorController::class, 'deleteInspetor'])->name('inspectors.deleteInspetor');
+Route::delete('admin/inspectors/{name}',[InspectorController::class, 'deleteInspetor'])->name('inspectors.deleteInspetor');
 
 Route::any('admin/inspectors/search',[InspectorController::class, 'search'])->name('inspectors.search');
 
+Route::get('admin/inspectors/{name}/edit',[InspectorController::class, 'edit'])->name('inspectors.edit');
+
+Route::PUT('admin/inspectors/{name}',[InspectorController::class, 'update'])->name('inspectors.update');
+
+
 // BREADCRUMB
 
-Route::get('admin',[InspectorController::class, 'index'])->name(admin.index');
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('admin',[InspectorController::class, 'index'])->name('admin.index');

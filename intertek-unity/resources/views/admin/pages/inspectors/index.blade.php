@@ -7,9 +7,8 @@
 
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('inspectors.index') }}" class="href">Dashboard</a></li>
-        
-    </ol>
 
+    </ol>
 
 @stop
 
@@ -29,12 +28,12 @@
             <table class="table table-condensed">
                 <thead>
                     <tr>
-                        <th>Nome</th>
+                        <th>name</th>
                         <th>Estado</th>
                         <th>Cidade</th>
                         <th>Disciplina</th>
                         <th>Qualificacoes</th>
-                        <th style="width:30px">Acoes</th>
+                        <th style="width:300px;">Acoes</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,7 +41,7 @@
 
                     <tr>
                         <td>
-                            {{ $inspector -> nome }}
+                            {{ $inspector -> name }}
                         </td>
                         <td>
                             {{ $inspector -> UF }}
@@ -56,8 +55,9 @@
                         <td>
                             {{ $inspector -> qualificacoes }}
                         </td>
-                        <td style="width:30px">
-                            <a href="{{ route ('inspectors.show', $inspector->nome) }}" class="btn btn-warning">VER DADOS</a>
+                        <td style="width:10px;">
+                            <a href="{{ route ('inspectors.edit', $inspector->name) }}" class="btn btn-info">ATUALIZAR</a>
+                            <a href="{{ route ('inspectors.show', $inspector->name) }}" class="btn btn-warning">VER DADOS</a>
                         </td>
                     </tr>
 

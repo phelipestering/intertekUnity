@@ -19,7 +19,7 @@ class InspectorController extends Controller
 
     public function index()
     {
-        $inspectors = Inspector::paginate(2);
+        $inspectors = Inspector::paginate(15);
 
         // $inspectors = $this->repository->all();
 
@@ -46,7 +46,7 @@ class InspectorController extends Controller
 
     public function show($name)
     {
-        $inspector = $this->repository->where('nome', $name)->first();
+        $inspector = $this->repository->where('name', $name)->first();
 
         if(!$name)
 
@@ -59,7 +59,7 @@ class InspectorController extends Controller
 
     public function deleteInspetor($name)
     {
-        $inspector = $this->repository->where('nome', $name)->first();
+        $inspector = $this->repository->where('name', $name)->first();
 
         if(!$name)
             return redirect()->back();
@@ -82,4 +82,31 @@ class InspectorController extends Controller
 
     }
 
+    public function edit($name)
+    {
+
+        $inspector = $this->repository->where('name', $name)->first();
+
+        if(!$inspector)
+            return redirect()->back();
+
+        return view('admin.pages.inspectors.edit', compact('inspector, name'));
+
+        return redirect()->route('inspectors.index');
+
+    }
+
+    public function update(Request $request, $name)
+    {
+
+        $inspector = $this->repository->where('name', $name)->first();
+
+        if(!$inspector)
+            return redirect()->back();
+
+        $inspector->update($request->all());
+
+        return redirect()->route('inspectors.index');
+
+    }
 }

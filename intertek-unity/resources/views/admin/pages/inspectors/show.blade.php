@@ -1,19 +1,19 @@
 @extends('adminlte::page')
 
-@section('title', "Unity - Dados Inspetor {{ $inspector->nome }}")
+@section('title', "Unity - Dados Inspetor {{ $inspector->name }}")
 
 @section('content_header')
-<h1>Dados Inspetor <b>{{ $inspector->nome }}</b></h1>
+<h1>Dados Inspetor <b>{{ $inspector->name }}</b></h1>
 @stop
 
 @section('content')
         <div class="card-body">
 
-            
+
 
             <ul>
                 <li>
-                    <strong>Nome:</strong> {{ $inspector->nome }}
+                    <strong>Nome:</strong> {{ $inspector->name }}
                 </li>
 
                 <li>
@@ -58,10 +58,10 @@
 
             </ul>
 
-            <form action="{{ route('inspectors.deleteInspetor', $inspector->nome) }}" method="POST">
+            <form action="{{ route('inspectors.deleteInspetor', $inspector->name) }}" method="POST">
             @csrf
             @method('DELETE')
-                <button type="submit" class="btn btn-danger"> DELETAR INSPETOR {{ $inspector->nome}}
+                <button type="submit" class="btn btn-danger"> DELETAR INSPETOR {{ $inspector->name}}
 
             </button>
 

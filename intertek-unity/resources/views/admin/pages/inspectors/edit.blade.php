@@ -1,22 +1,25 @@
 @extends('adminlte::page')
 
-@section('title', 'Unity - Cadastro Inspetores')
+@section('title', "Unity - Editar Inspetores { $inspector->name } ")
 
 @section('content_header')
-<h1>Cadastrar Novo Inspetor</h1>
+<h1>Atualizar Inspetor {{ $inspector->name }} </h1>
 @stop
 
 @section('content')
-    <p>Cadastro</p>
+    <p>ATUALIZAR INSPETOR</p>
 
         <div class="card-body">
-            <form action="{{ route('inspectors.store') }}" class="form" method="POST">
+            <form action="{{ route('inspectors.update', $inspector->name) }}" class="form" method="POST">
+
                 @csrf
+
+                @method('PUT')
 
                 @include('admin.pages.inspectors._partials.forms')
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-success">Cadastrar</button>
+                    <button type="submit" class="btn btn-success">ATUALIZAR</button>
                 </div>
 
             </form>

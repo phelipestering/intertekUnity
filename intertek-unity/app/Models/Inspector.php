@@ -11,7 +11,7 @@ class Inspector extends Model
 
     protected $fillable = [
 
-        'nome',
+        'name',
         'sobreNome',
         'DataNascimento',
         'emailIntertek',
@@ -29,7 +29,7 @@ class Inspector extends Model
 
     public function search($filter = null)
     {
-        $results = $this->where('nome', 'LIKE', "%${filter}%")
+        $results = $this->where('name', 'LIKE', "%${filter}%")
                         ->orWhere('UF', 'LIKE', "%{$filter}%")
                         ->orWhere('cidade', 'LIKE', "%{$filter}%")
                         ->orWhere('disciplina', 'LIKE', "%{$filter}%")
